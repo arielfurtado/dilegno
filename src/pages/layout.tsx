@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { Inter } from 'next/font/google';
+import { Raleway } from 'next/font/google';
 import '../app/globals.scss';
 
-const inter = Inter({ subsets: ['latin'] });
+const ralewayFont = Raleway({ subsets: ['latin'] });
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,7 +17,7 @@ export default function Layout({ children, title, description }: LayoutProps) {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
-      <div className={inter.className}>{children}</div>
+      <div className={ralewayFont.className}>{children}</div>
     </>
   );
 }
