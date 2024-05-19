@@ -16,7 +16,7 @@ const getLinkUrl = (params: {
   const [resolvedHref, resolvedAs] = resolveHref(
     params.router,
     params.href,
-    true
+    true,
   );
 
   return resolvedAs || resolvedHref;

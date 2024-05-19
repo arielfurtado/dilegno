@@ -4,7 +4,6 @@ import ActiveLink from './activeLink';
 import { useRouter } from 'next/router';
 import styles from './menu.module.scss';
 import Link from 'next/link';
-import Logo from '../../assets/logo.svg';
 import Image from 'next/image';
 
 const Menu = () => {
@@ -20,7 +19,13 @@ const Menu = () => {
       <div className={styles.wrapper}>
         <div className={styles.logo}>
           <Link href="/">
-            <Image src={Logo} alt="Dilegno logo" />
+            <Image
+              src="/assets/logo.svg"
+              alt="Dilegno logo"
+              width="30"
+              height="150"
+              priority={true}
+            />
           </Link>
         </div>
         <button
