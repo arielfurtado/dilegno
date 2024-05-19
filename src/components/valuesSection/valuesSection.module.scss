@@ -1,130 +1,129 @@
 @import '../../app/mixins';
 .valuesSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #fcf6eb;
+
+  .container {
+    @include wrapper-style;
+    max-width: 1920px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background: #FCF6EB;
-  
-    .container {
-      @include wrapper-style;
-      max-width: 1920px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-left: 0;
-      padding-top: 0;
-      padding-bottom: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .imageSection {
+    flex: 0 0 40%;
+    overflow: hidden;
+    position: relative;
+    max-height: 640px;
+    @media (max-width: 1100px) {
+      display: none;
     }
-  
-    .imageSection {
-        flex: 0 0 40%;
-        overflow: hidden;
-        position: relative;
-        max-height: 640px;
-        @media (max-width: 1100px) {
-          display: none;
-        }
-  
-      img {
-        object-fit: cover; /* Ajuste de imagem para cobrir o container */
-        object-position: center; /* Alinha a imagem ao centro */
-      }
+
+    img {
+      object-fit: cover; /* Ajuste de imagem para cobrir o container */
+      object-position: center; /* Alinha a imagem ao centro */
     }
-  
-    .textSection {
-      flex: 1;
-      padding: 40px 0 40px 40px;
-      max-width: 650px;
-      margin: 0 auto;
+  }
+
+  .textSection {
+    flex: 1;
+    padding: 40px 0 40px 40px;
+    max-width: 650px;
+    margin: 0 auto;
+    @media (max-width: 768px) {
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 12px;
+      color: #3a3a3a;
       @media (max-width: 768px) {
-        overflow: hidden;
-        max-width: 100%;
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
     }
-  
-      h2 {
-        font-size: 28px;
-        text-align: center;
-        margin-bottom: 12px;
-        color: #3A3A3A;
-        @media (max-width: 768px) {
-            font-size: 22px;
-            margin-bottom: 8px;
+
+    p {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 22px;
+      @media (max-width: 768px) {
+        font-size: 14px;
+        margin-bottom: 18px;
+      }
+    }
+
+    .valuesGrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+
+      .valueItem {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+
+        img {
+          width: 40px;
+          height: 40px;
+          margin-bottom: 16px;
+        }
+
+        h3 {
+          font-size: 18px;
+          margin-bottom: 8px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 1.5;
+          text-align: left;
         }
       }
-  
-      p {
-        font-size: 18px;
-        text-align: center;
-        margin-bottom: 22px;
-        @media (max-width: 768px) {
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
-      }
-  
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .textSection {
+      padding-left: 0;
+
       .valuesGrid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-  
+        gap: 10px;
+
         .valueItem {
-          background: #ffffff;
-          border: 1px solid #e0e0e0;
-          border-radius: 8px;
-          padding: 20px;
-  
-          img {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 16px;
-          }
-  
+          flex: 0 0 auto;
+          padding: 10px;
           h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
+            font-size: 16px;
           }
-  
+          svg {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 10px;
+          }
           p {
             font-size: 14px;
-            line-height: 1.5;
-            text-align: left;
-          }
-        }
-      }
-    }
-  
-    @media (max-width: 768px) {
-      flex-direction: column;
-  
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
-  
-      .textSection {
-        padding-left: 0;
-  
-        .valuesGrid {
-            gap: 10px;
-  
-          .valueItem {
-            flex: 0 0 auto;
-            padding: 10px;
-            h3 {
-                font-size: 16px;
-            }
-            svg {
-                width: 24px;
-                height: 24px;
-                margin-bottom: 10px;
-            }
-            p {
-                font-size: 14px;
-            }
           }
         }
       }
     }
   }
-  
+}

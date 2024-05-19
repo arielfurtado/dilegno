@@ -10,7 +10,7 @@ const ContactSection: React.FC = () => {
   return (
     <section
       className={styles.contactSection}
-      style={{ backgroundImage: `url(/assets/banner_home.jpg)` }}
+      style={{ backgroundImage: `url(/assets/contactSection.jpg)` }}
     >
       <div className={styles.overlay}></div>
       <div className={styles.content}>
